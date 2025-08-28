@@ -1,4 +1,4 @@
-//prime no program in java
+//prime no program in java for
 package test;
 
 public class Testing {

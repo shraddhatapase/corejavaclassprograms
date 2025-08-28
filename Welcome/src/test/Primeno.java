@@ -1,4 +1,4 @@
-// prime no and composite no from array 
+// prime no and composite no from array in java
 package test;
 
 public class Primeno {

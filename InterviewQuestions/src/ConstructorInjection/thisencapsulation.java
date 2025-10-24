@@ -1,3 +1,13 @@
+//this and super method use
+//Outut:
+//	value assigned in the super class:HARLEY_DAVIDSON
+//	Four wheeler class:
+//	Three wheeler class:
+//	display
+//	display
+
+
+
 package ConstructorInjection;
 
 public class thisencapsulation {
@@ -12,15 +22,17 @@ class Vehicle {
 		this.name = name;
 		System.out.println("value assigned in the super class:" + name);
 	}
+	public void display() {
+		System.out.println("display");
+	}
 }
-
 class Four_wheeler extends Vehicle {
 	public Four_wheeler(String name) {
 		super(name); // if we not declare this then it will give super clas  constructor undefined
 		System.out.println("Four wheeler class:");
+		
 	}
 }
-
 class Three_wheeler extends Four_wheeler {
 	public Three_wheeler(String name) {
 		super(name);
@@ -32,5 +44,8 @@ class Two_wheeler extends Three_wheeler {
 	public Two_wheeler(String name) {
 		super(name.toUpperCase());
 		// String str2=name.toUpperCase();
+		super.display();
+		this.display();
+		
 	}
 }

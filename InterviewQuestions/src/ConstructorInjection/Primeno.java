@@ -1,0 +1,56 @@
+package ConstructorInjection;
+public class Primeno {
+	   public static void main(String[] args) {
+	      int num = 14;
+	      System.out.println("The given number is: " + num);
+	      // initial count of factors
+	      int count = 0;
+	      // to check prime number
+	      if(num == 2) {
+	         System.out.println(num + " is a prime number");
+	      } else {
+	         // checking number of factors
+	         for(int i = 1; i <= num; i++) {
+	            if(num % i == 0) {
+	               count++;
+	            }
+	         }
+	         // checking number of counts to print result
+	         if(count == 2) {
+	            System.out.println(num + " is a prime number");
+	         } else {
+	            System.out.println(num + " is not a prime number");
+	         }
+	      }
+	   }
+	}
+//program by mahesh sir
+//package datatypes;
+//
+//public class Prime {
+//
+//	public static void main(String[] args) {
+//		int num=111;
+//		boolean flag=true;
+//		
+//		for(int i=2;i<num;i++)
+//		{
+//			if(num%i==0)
+//			{
+//				flag=false;
+//				break;
+//			}
+//			
+//		}
+//		if(flag)
+//		{
+//			System.out.println("prime");
+//		}
+//		else
+//		{
+//			System.out.println("non prime");
+//		}
+//
+//	}
+//
+//}

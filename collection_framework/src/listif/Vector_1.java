@@ -20,7 +20,7 @@ public class Vector_1 {
 	  vec.add("45");
 	  
 	  
-	//  System.out.println(vec.get(0));
+	 System.out.println(vec.get(0));
 	  
 	  
 	 // System.out.println(vec.isEmpty());
@@ -32,7 +32,7 @@ public class Vector_1 {
 //	  //System.out.println(vec.remove(0));
 //	  System.out.println(vec.remove(null));
 //	 // System.out.println(vec.isEmpty());
-//	  System.out.println(vec);
+  System.out.println(vec);
 	  
 	}
 }

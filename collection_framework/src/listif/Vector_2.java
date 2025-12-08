@@ -18,7 +18,7 @@ public class Vector_2 {
 		
 		String status= vec.remove(1);
 		// System.out.println("removed element:"+i);
-		System.out.println(status);
+		//System.out.println(status);
 		System.out.println(vec);
 	}
 

@@ -8,19 +8,19 @@ public class Second {
 	}
 
 }
-
-class Car {
-
+class Car
+{
+	
 }
-
-class Maruti extends Car {
-
+class Maruti extends Car
+{
+	
 }
-
-class Hyundai extends Car {
-
+class Hyundai extends Car
+{
+	
 }
-
-class Verna extends Hyundai {
-
+class Verna extends Hyundai
+{
+	
 }

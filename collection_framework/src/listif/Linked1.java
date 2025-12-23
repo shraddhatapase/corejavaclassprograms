@@ -20,7 +20,7 @@ public class Linked1 {
 		
 		list2.addAll(list);
 //		
- System.out.println(list);
+//		 System.out.println(list);
 //		 list.clear();
 //	 System.out.println(list.get(34000));
 }

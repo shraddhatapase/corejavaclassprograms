@@ -21,7 +21,7 @@ public class First {
 		set.add(32);
 		set.add(1);
 		set.add(null);
-		//set.add("demo");
+		set.add("demo");
 		
 		System.out.println(set);
 	}

@@ -23,11 +23,12 @@ public class CharacterCount {
         );
     }
 }
-//p : 1
-//r : 2
-//o : 1
-//g : 2
-//a : 1
-//m : 2
-//i : 1
-//n : 1
+//str.chars() → converts string to IntStream
+//
+//mapToObj() → converts int to Character
+//
+//groupingBy() → groups same characters
+//
+//Collectors.counting() → counts occurrences
+//
+//LinkedHashMap → keeps original order

@@ -32,15 +32,15 @@ public class Limit_Skip_3 {
 		
 		
 		System.out.println("IT");
-		//list1.stream().sorted(new EmpSalary()).limit(2).skip(1).forEach((i)->{
-		//	System.out.println(i);
-		//});
+		list1.stream().sorted(new EmpSalary()).limit(2).skip(1).forEach((i)->{
+			System.out.println(i);
+		});
 		
 		
 		System.out.println("HR");
-		//list2.stream().sorted(new EmpSalary()).limit(2).skip(1).forEach((i)->{
-		//	System.out.println(i);
-		//});
+		list2.stream().sorted(new EmpSalary()).limit(2).skip(1).forEach((i)->{
+			System.out.println(i);
+		});
 		}
 				
 		

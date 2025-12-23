@@ -27,7 +27,7 @@ public class Stack_1 {
 		System.out.println(names);
 		
 		
-		
+		ArrayList<E>
 	}
 }
 

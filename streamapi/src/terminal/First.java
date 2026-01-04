@@ -18,7 +18,8 @@ public class First {
 		
 
 		List<Integer> list=Arrays.asList(10,20,30,40,40,50,50,30,33,45,11,40,50,111);	
-		
+		List<Integer> sum1=list.stream().collect(new Integer_adder());
+		System.out.println("mysum"+sum1);
 		 
 //		List<String> list2=Arrays.asList("abc","def","ghi");
 //		
@@ -55,6 +56,7 @@ class Integer_adder implements Collector<Integer, List<Integer>, List<Integer>>
 	@Override
 	public BiConsumer<List<Integer>, Integer> accumulator() {
 		 return (list, in)->{
+			 
 			 if(in %2 !=0)
 			 {
 				 list.add(in);

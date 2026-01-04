@@ -13,7 +13,9 @@ public class First {
 		 
 		 System.out.println(one.name);
 		 System.out.println(two.name);
-		
+		 
+		 System.out.println(one.hashCode());
+		 System.out.println(two.hashCode());
 		
 	}
 

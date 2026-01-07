@@ -1,134 +1,104 @@
 package basic;
 
 public class Even_Prime {
+    public static void main(String[] args) {
+        Printer printer = new Printer();
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		Priter prit=new Priter();
-		EvenPrinter even=new EvenPrinter(prit);
-		
-		PrimePrinter1 prime=new PrimePrinter1(prit);
-		
-		even.start();
-		prime.start();
-		
-	}
+        new EvenThread(printer).start();
+        new PrimeThread(printer).start();
+    }
 }
 
-class Priter
-{
-	int counter=0;
-	
-	int counter2=Integer.MAX_VALUE;
-	int counter3=Integer.MAX_VALUE;
-	static int num=1;
-	static int num2=3;
-	public synchronized void  printeven() throws InterruptedException
-	{
-		for(int i=num;i<counter2;i++)
-		{
-			if(i%2==0)
-			{
-				System.out.println("Even :"+i);
-				this.counter++;
-				num++;
-				System.out.println(counter);
-			}
-			if(this.counter==10)
-			{
-				break;
-			}
-		}
-		notify();
-		  if(this.counter ==10)
-		  {
-			  System.out.println("now print prime");
-			 wait();
-		  }
-		
-	}
-	public synchronized void prime() throws InterruptedException
-	{
-		
-		
-		for(int j=num2;j<counter3;j++)
-		{
-			boolean flag=false;
-			for(int i=2;i<j;i++)
-			{
-				if(j%i==0)
-				{
-					flag=true;
-				}
-			}
-				
-			if(!flag)
-			{
-				System.out.println(j);
-				this.counter--;
-				System.out.println("counter prime:"+this.counter);
-			}
-			if(this.counter==0)
-			{
-				break;
-			}
-			num2++;	
-		}
-		notify();
-		if(this.counter==0)
-		{ 
-			wait();
-			System.out.println("now even");
-		}
-	}
+class Printer {
+
+    private int even = 2;
+    private int prime = 2;
+    private int count = 0;
+    private boolean evenTurn = true;
+
+    public synchronized void printEven() throws InterruptedException {
+        while (!evenTurn) {
+            wait();
+        }
+
+        System.out.println("---- EVEN NUMBERS ----");
+        count = 0;
+
+        while (count < 10) {
+            System.out.println("Even: " + even);
+            even += 2;
+            count++;
+        }
+
+        evenTurn = false;
+        notifyAll();
+    }
+
+    public synchronized void printPrime() throws InterruptedException {
+        while (evenTurn) {
+            wait();
+        }
+
+        System.out.println("---- PRIME NUMBERS ----");
+        count = 0;
+
+        while (count < 10) {
+            if (isPrime(prime)) {
+                System.out.println("Prime: " + prime);
+                count++;
+            }
+            prime++;
+        }
+
+        // ⏳ WAIT 1 MINUTE AFTER PRIME
+        System.out.println("⏳ Waiting for 1 minute...\n");
+        Thread.sleep(60_000);
+
+        evenTurn = true;
+        notifyAll();
+    }
+
+    private boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
 }
 
-class EvenPrinter extends Thread
-{
-	Priter prit;
-	
-	
-	public EvenPrinter(Priter prit)
-	{
-		this.prit=prit;
-	}
-	
-	public void run()
-	{
-		while(true)
-		{
-			try {
-				Thread.sleep(1000);
-				prit.printeven();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-	
+class EvenThread extends Thread {
+    Printer printer;
+
+    EvenThread(Printer printer) {
+        this.printer = printer;
+    }
+
+    public void run() {
+        try {
+            while (true) {
+                printer.printEven();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
-class PrimePrinter1 extends Thread{
-	Priter prit;
-	
-	public PrimePrinter1(Priter prit)
-	{
-		this.prit=prit;
-	}
-	
-	
-	public void run()
-	{while(true)
-	{
-		try {
-			Thread.sleep(1000);
-			prit.prime();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	}
+class PrimeThread extends Thread {
+    Printer printer;
+
+    PrimeThread(Printer printer) {
+        this.printer = printer;
+    }
+
+    public void run() {
+        try {
+            while (true) {
+                printer.printPrime();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

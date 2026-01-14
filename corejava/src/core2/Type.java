@@ -6,7 +6,7 @@ public class Type {
 		
 		int age=45;
 		
-		Aeroplane aero=new Aeroplane();
+		Aeroplane1 aero=new Aeroplane1();
 		System.out.println(aero.nameaero);
 		
 		Bus bus=new Bus();
@@ -21,7 +21,7 @@ public class Type {
 	}
 }
 
-class Aeroplane
+class Aeroplane1
 {
  String nameaero="Boeing";	 //instance
 }

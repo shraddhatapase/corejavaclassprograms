@@ -7,7 +7,7 @@ public class Second {
 		int age=100;
 		System.out.println(age);
 		
-		Demo d=new Demo(); //d is the instance Demo.
+		Demoi d=new Demoi(); //d is the instance Demo.
 		d.demo();
 		d.eat();
 		
@@ -15,7 +15,7 @@ public class Second {
 
 }
 
-class Demo
+class Demoi
 {
 	public void demo()
 	{

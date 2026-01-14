@@ -7,13 +7,10 @@ import java.util.concurrent.Executors;
 
 public class First {
 
-	public static void main(String[] args) throws Exception {
-
-	
-		
-		
+	public static void main(String[] args) throws Exception {		
 		//newSingleThreadExecutor()
-		//newFixedThreadPool()
+				//newFixedThreadPool()
+	
 		ExecutorService ser=Executors.newCachedThreadPool();
 		
 		for(int i=1;i<=100;i++)

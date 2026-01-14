@@ -21,7 +21,7 @@ public class First {
 		set.add(32);
 		set.add(1);
 		set.add(null);
-		set.add("demo");
+		//set.add("demo");create error can not add string 
 		
 		System.out.println(set);
 	}

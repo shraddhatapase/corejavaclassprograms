@@ -15,7 +15,7 @@ public class First {
 
 }
 
-@Hero
+
 class Second
 {
 	Third third;  //DI=> D Injection
@@ -33,7 +33,7 @@ class Second
 	
 }
 
-@Villain
+
 class Third 
 {
 	

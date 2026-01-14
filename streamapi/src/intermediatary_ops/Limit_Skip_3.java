@@ -24,11 +24,11 @@ public class Limit_Skip_3 {
 		//Second highest in the same 
 		//Highest or lowest departmentwise.
 		
-//		List<Emp> list1=uss.stream().filter((i)->(i.dept.equals("IT")))
-//				.collect(Collectors.toList());
-//		
-//		List<Emp> list2=uss.stream().filter((i)->(i.dept.equals("HR")))
-//				.collect(Collectors.toList());
+		List<Emp> list1=uss.stream().filter((i)->(i.dept.equals("IT")))
+				.collect(Collectors.toList());
+		
+		List<Emp> list2=uss.stream().filter((i)->(i.dept.equals("HR")))
+				.collect(Collectors.toList());
 		
 		
 		System.out.println("IT");
